@@ -38,4 +38,7 @@ while answer != "yes":
 	answer = candy.lower()
 print("Thank you, mom and dad for the candy")
 
-#Making a chane to test.
+
+print("Testing the change")
+#Making a change to test.
+
