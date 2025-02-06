@@ -31,10 +31,19 @@ new_client = ""
 
 while new_client != "quit":
   new_client = input("New client name: ")
-  clients.append(new_client)
+  if new_client != "quit":
+    clients.append(new_client)
 
 print("The clients are: ")
 for client in clients:
   print(f" {client}")
 
+#Working with Lists of Numbers
 
+points_scored = [5,2,5,7,8,9,5,]
+running_total = 0
+
+for point_amount in points_scored
+  running_total = running_total + point_amount
+
+print(f"The player has scored {running_total} points")
