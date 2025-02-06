@@ -13,13 +13,28 @@ clients = list()
 #To add new clients to the list we use append method.
 
 clients = ["John", "Mary"]
-print(clients)
 clients.append("Lucas")
 clients.append("Lisa")
-print()
 print(clients)
+print()
+new_client = input("New client name: ")
+clients.append(new_client)
 
-#Checking this part still
-clientes.append(input("What's your client's name?: ")
-print()
-print(clients)
+for client in clients:
+  print(client)
+
+#Creating loops and list
+#User input into lists
+
+clients = []
+new_client = ""
+
+while new_client != "quit":
+  new_client = input("New client name: ")
+  clients.append(new_client)
+
+print("The clients are: ")
+for client in clients:
+  print(f" {client}")
+
+
