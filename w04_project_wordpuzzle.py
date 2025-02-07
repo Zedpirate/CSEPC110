@@ -28,21 +28,23 @@ guess = ""
 while guess != secret:
     guess = input("What is your guess?: ")
     guess_count = guess_count + 1
-
-    if len(guess) == letter_count:
+    
+    if len(guess) != letter_count:
+      print(f"Your guess must have {letter_count} letters.")
+      print()
+      continue
+    else: 
+      if len(guess) == letter_count:
         for i, letter in enumerate(guess):    
-            if letter == secret[i]:
-                print(letter.upper(), end=" ")
-            elif letter in secret:
-                print(letter, end=" ")
-            else:
-                print("_", end=" ")
+          if letter == secret[i]:
+            print(letter.upper(), end=" ")
+          elif letter in secret:
+            print(letter, end=" ")
+          else:
+            print("_", end=" ")
         print()
-    print("Try again!")
-    print()
-
+        print("Try again!")
 print("You guessed it!")
 print(f"It took you {guess_count} guesses")
 print()
 print("Thanks for playing!")
-
