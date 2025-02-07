@@ -47,3 +47,19 @@ for point_amount in points_scored:
   running_total = running_total + point_amount
 
 print(f"The player has scored {running_total} points")
+
+
+
+friends = []
+friend = ""
+while friend != "end":
+  friend = input("What's the name of your friend?: ")
+  if friend != "end":
+    friends.append(friend)
+
+print("Your friends are")
+for friend in friends:
+  print(friend)
+
+
+
