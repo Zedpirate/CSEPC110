@@ -25,15 +25,23 @@ for i in range(len(colors)):
 
 #Please enter the items of the shopping list (type: quit to finish):
 
-shopping_list = [""]
-add_list = ""
+shopping_list = []
+item = ""
 
-while add_list != "quit"
-  add_list = input("Please enter the item 'type: quit to finish': ")
-  enumerate(add_list)
+while item != "quit":
+    item = input("Item: ")
 
-print("The Shopping List it:")
-for list in shopping_list:
-  print(list)
-  
+    if item != "quit":
+        shopping_list.append(item)
+
+print("\nThe shopping list is:")
+for item in shopping_list:
+    print(item)
+
+print("\nThe shopping list with indexes is:")
+for i in range(len(shopping_list)):
+    item = shopping_list[i]
+    human_count = i +1
+    print(f"{i}. {item}")
+
 
