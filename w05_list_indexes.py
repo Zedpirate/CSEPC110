@@ -32,3 +32,8 @@ while add_list != "quit"
   add_list = input("Please enter the item 'type: quit to finish': ")
   enumerate(add_list)
 
+print("The Shopping List it:")
+for list in shopping_list:
+  print(list)
+  
+
