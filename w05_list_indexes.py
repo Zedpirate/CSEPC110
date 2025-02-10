@@ -41,7 +41,16 @@ for item in shopping_list:
 print("\nThe shopping list with indexes is:")
 for i in range(len(shopping_list)):
     item = shopping_list[i]
-    human_count = i +1
     print(f"{i}. {item}")
 
+print()
+index = int(input("Which item would you like to change? "))
+new_item = input("What is the new item? ")
+
+shopping_list[index] = new_item
+
+print("\nThe shopping list with indexes is:")
+for i in range(len(shopping_list)):
+    item = shopping_list[i]
+    print(f"{i}. {item}")
 
