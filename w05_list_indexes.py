@@ -29,4 +29,6 @@ shopping_list = [""]
 add_list = ""
 
 while add_list != "quit"
-  
+  add_list = input("Please enter the item 'type: quit to finish': ")
+  enumerate(add_list)
+
