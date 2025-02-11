@@ -33,7 +33,9 @@ print(f"The largest number is: {max(number_list):.2f}")
 
 #Have the user enter both positive and negative numbers, then find the smallest positive number (the positive number that is closest to zero).
 
-print(min(number for number in number_list if number > 0))
+print(f"The smallest positive number is: {min(number for number in number_list if number > 0):.2f}")
 
 #Sort the numbers in the list and display the new, sorted list. Hint: There are python libraries that can help you here, try searching the internet for them.
 
+number_list.sort()
+print(f"The sorted list is: {number_list}")
