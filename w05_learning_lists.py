@@ -1,6 +1,6 @@
 #Helaman Menk
 #Week05 Leearning Activity
-
+'''
 #Using square brakets we can create lists in python [ ] 
 
 clients = []
@@ -62,10 +62,21 @@ for friend in friends:
   print(friend)
 
 
-
+'''
 #Learning Activity Week05 List Indexes
 
 
+# Index =     0    1        2         3
+colors = ["red", "blue", "green", "yellow"]
 
+#print(colors[1])
 
+#for color in colors:
+#    print(color)
+
+for i in range(len(colors)):
+    color = colors[i]
+    print(f"{i} - {color}")
+
+    
 
