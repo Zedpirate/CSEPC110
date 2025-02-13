@@ -8,7 +8,7 @@ game = input("Hello, would you like to play a game? YES or NO:  \n type 'FINISH'
 
 game_std = game.lower()
 
-while game.std != "FINISH"
+while game_std != "FINISH"
   game = input("Hello, would you like to play a game? YES or NO:  \n type 'FINISH' when you want to stop")
     if game.lower() != "yes":
         while game != "yes"
