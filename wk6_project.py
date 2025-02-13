@@ -11,5 +11,6 @@
 #File Format:
 #Entity,Code,Year,Life expectancy (years)
 
-with life-expectancy.csv open as f:
-  
+with ("life-expectancy.csv") as f:
+  for line in hr_system:
+        parts = line.split(" ")
