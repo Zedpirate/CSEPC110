@@ -25,15 +25,20 @@ life_expectancy = [
   "Myanmar,MMR,1957,40.528"
 ]
 
+lowest_life_expectancy = 999
+lowest_entity = " "
 
 #with ("life-expectancy.csv") as f:
   #for line in f:
 for line in life_expectancy:
   parts = line.split(",")
   entity = parts[0]
-  code = parts [1]
-  year = parts [2]
-  life_expectancy = parts [3]
-  if lowest_life < life_expectancy:
+  code = parts[1]
+  year = parts[2]
+  life_expectancy = float(parts[3])
+  if life_expectancy < lowest_life_expectancy:
+      lowest_life_expectancy = life_expectancy
+      lowest_entity = entity
+  print(f"Entity: {lowest_entity} - Life Expectancy: {lowest_life_expectancy} years")
 
 
