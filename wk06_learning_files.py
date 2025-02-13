@@ -82,6 +82,9 @@ print(f"The product with the maximum price is: {max_product}")
 
 #Activity
 
+youngest_age = 99
+youngest_name = ""
+
 people = [
     "Stephanie 36",
     "John 29",
@@ -92,3 +95,16 @@ people = [
     "Michael 2",
     "Jacob 10"
 ]
+
+#Iterate through the list and split Name and Number
+for person in people:
+    each_part = person.split()
+    name = each_part[0]
+    age = int(each_part[1])
+
+    if age < youngest_age:
+        youngest_age = age
+        youngest_name = name
+print(f"The youngest person is: {youngest_name} and it {youngest_age} years old")
+
+    
