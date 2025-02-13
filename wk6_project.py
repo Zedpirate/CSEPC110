@@ -53,6 +53,11 @@ for line in expectancy_file:
         highest_year = year
   print(f"Country with highest life expectancy was {highest_entity} in {highest_year} with {highest_life_expectancy} years")
 
+
+#Menu - Type 1 to search by year or Type 2 to search by country
+
+
+
 print()
 user_year = int(input("Please type in a year: "))
 
