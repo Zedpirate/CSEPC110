@@ -11,9 +11,9 @@
 #File Format:
 #Entity,Code,Year,Life expectancy (years)
 
-life_expectancy = [
-  "Afghanistan,AFG,1950,27.638",
-  "Afghanistan,AFG,1951,27.878",
+expectancy_file = [
+  "Afghanistan,AFG,1950,25.00",
+  "Afghanistan,AFG,1951,30.00",
   "Afghanistan,AFG,1952,28.361",
   "Afghanistan,AFG,1953,28.852",
   "Afghanistan,AFG,1954,29.35",
@@ -22,7 +22,7 @@ life_expectancy = [
   "Iceland,ISL,1891,47.509998",
   "Iceland,ISL,1892,52.740002",
   "Morocco,MAR,2012,74.97",
-  "Myanmar,MMR,1957,40.528"
+  "Myanmar,MMR,1950,45.00"
 ]
 
 lowest_life_expectancy = 999
@@ -33,18 +33,15 @@ highest_life_expectancy = 1
 highest_entity = " "
 highest_year = 1
 
-part_three = []
-
 
 #with ("life-expectancy.csv") as f:
   #for line in f:
-for line in life_expectancy:
+for line in expectancy_file:
   parts = line.split(",")
   entity = parts[0]
   code = parts[1]
   year = int(parts[2])
   life_expectancy = float(parts[3])
-  part_three.append(life_expectancy)
   if life_expectancy < lowest_life_expectancy:
       lowest_life_expectancy = life_expectancy
       lowest_entity = entity
@@ -54,23 +51,41 @@ for line in life_expectancy:
         highest_life_expectancy = life_expectancy
         highest_entity = entity
         highest_year = year
-      print(f"Country with highest life expectancy was {highest_entity} in {highest_year} with {highest_life_expectancy} years")
-
+  print(f"Country with highest life expectancy was {highest_entity} in {highest_year} with {highest_life_expectancy} years")
 
 print()
 user_year = int(input("Please type in a year: "))
-user_year_int = int(user_year)
-while user_year_int != 0:
-        for line in expectancy_file:
-            parts = line.split(",")
-            entity = parts[0]
-            code = parts[1]
-            year = int(parts[2])
-            life_expectancy = float(parts[3])
-        if user_year_int == year:
-            part_three = []
-            part_three.append(life_expectancy)
-            count_part_three = len(part_three) + 1
-            real_average = sum(part_three) / count_part_three
-        print(real_average)
-        user_year = input("Please type in a year: ")
+
+while user_year != 0:
+    total_life_expectancy = 0
+    count = 0
+    lowest_year = float(999)
+    highest_year = 0
+    lowest_entity = ""
+    highest_entity = ""
+
+    for line in expectancy_file:
+        parts = line.split(",")
+        entity = parts[0]
+        year = int(parts[2])
+        life_expectancy = float(parts[3])
+
+        if year == user_year:
+            total_life_expectancy += life_expectancy
+            count += 1
+            if life_expectancy < lowest_year:
+                lowest_year = life_expectancy
+                lowest_entity = entity
+            if life_expectancy > highest_year:
+                highest_year = life_expectancy
+                highest_entity = entity
+
+    if count > 0:
+        average_life_expectancy = total_life_expectancy / count
+        print(f"Average life expectancy for {user_year} is {average_life_expectancy:.2f} years")
+        print(f"Country with lowest life expectancy in {user_year} was {lowest_entity} with {lowest_year} years")
+        print(f"Country with highest life expectancy in {user_year} was {highest_entity} with {highest_year} years")
+    else:
+        print(f"\n No data available for the year {user_year}")
+    print()
+    user_year = int(input("Please type in another year or 0 to exit: "))
