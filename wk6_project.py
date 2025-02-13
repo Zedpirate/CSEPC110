@@ -11,6 +11,16 @@
 #File Format:
 #Entity,Code,Year,Life expectancy (years)
 
-with ("life-expectancy.csv") as f:
-  for line in hr_system:
+life_expectancy = [
+Afghanistan,AFG,1950,27.638
+Afghanistan,AFG,1951,27.878
+Afghanistan,AFG,1952,28.361
+Afghanistan,AFG,1953,28.852
+Afghanistan,AFG,1954,29.35
+]
+
+
+#with ("life-expectancy.csv") as f:
+  #for line in f:
+  for line in life_expectancy:
         parts = line.split(" ")
